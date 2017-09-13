@@ -1,0 +1,74 @@
+var app=angular.module('newsApp',['ui.router','ng.post', 'news.controller','news.directive']);
+app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+	  $stateProvider.state('index',{
+		    url:'/index',
+		    templateUrl:'template/index.html',
+		    controller:'indexCtrl'
+	  })
+	  //新闻
+	  .state('index.tab',{
+		    url:'/tab',
+		    templateUrl:'template/tab.html',
+		    controller:'tabCtrl'
+	  }).state('index.tab.one',{
+	  	  url:'/one',
+	  	  templateUrl:'template/one.html',
+	  	  controller:'oneCtrl'
+	  }).state('index.tab.two',{
+	  	  url:'/two',
+	  	  templateUrl:'template/two.html',
+	  	  controller:'twoCtrl'
+	  }).state('index.tab.three',{
+	  	  url:'/three',
+	  	  templateUrl:'template/three.html',
+	  	  controller:'threeCtrl'
+	  }).state('index.four.two',{
+	  	  url:'/four',
+	  	  templateUrl:'template/four.html',
+	  	  controller:'fourCtrl'
+	  }).state('index.tab.five',{
+	  	  url:'/five',
+	  	  templateUrl:'template/five.html',
+	  	  controller:'fiveCtrl'
+	  }).state('index.tab.six',{
+	  	  url:'/six',
+	  	  templateUrl:'template/six.html',
+	  	  controller:'sixCtrl'
+	  }).state('index.tab.seven',{
+	  	  url:'/seven',
+	  	  templateUrl:'template/seven.html',
+	  	  controller:'sevenCtrl'
+	  })
+	  //详情页面
+	  .state('detail',{
+	  	  url:'/detail/:id',
+	  	  templateUrl:'template/detail.html',
+	  	  controller:'detailCtrl'
+	  })
+	  //读报
+	  .state('index.paper',{
+	  	  url:'/paper',
+	  	  templateUrl:'template/paper.html',
+	  	  controller:'paperCtrl'
+	  })
+	  //视频
+	  .state('index.video',{
+	  	  url:'/video',
+	  	  templateUrl:'template/video.html',
+	  	  controller:'videoCtrl'
+	  })
+	  //服务
+	  .state('index.service',{
+	  	  url:'/service',
+	  	  templateUrl:'template/service.html',
+	  	  controller:'serviceCtrl'
+	  })
+	  $urlRouterProvider.when('','/index/tab/one');  
+}])
+//设置api的路径
+app.value('apiUrl','newsApi');
+app.value('apiMethod','get');
+//测试数据
+
+var news = json;
+console.log(news);

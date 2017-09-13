@@ -1,0 +1,110 @@
+
+    <!--正文-->
+    <article class="weui_article">	     
+	    <section> 
+	    	<h3 class="detail-title">{{new.title}}</h3>
+	        <p class="detail-title">{{'来源:'+new.source}}</p>
+	        <p class="detail-title">{{new.pubDate}}</p>
+	    <section>
+         
+          <p class="detail-desc">{{new.allList}}</p>
+           <!--图片-->
+          <p ng-show="new.havePic" style="text-align: center;" ng-repeat="img in new.imageurls">
+            <img ng-click="showGallery(true,img.url)" ng-src="{{img.url}}" alt="">
+            <span class="weui-form-preview__ft">
+            	<a class="weui-form-preview__btn weui-form-preview__btn_primary" ng-click="showGallery(true,img.url)">点击查看大图</a>
+            </span>
+          </p>
+        </section>
+        
+      </section>
+      
+    </article>
+    <!--评论-->
+    <p ng-show="isfb" class="detail-fb">您的评论已经提交请耐心等待……</p>
+    <div class="detail-text" ng-show="istext">
+    	    <label ng-click="canceltext()">取消</label><label for="name">写评论</label><label ng-click="fabiaotext()">发表</label>
+    	    <textarea class="detail-textarea" rows="10" cols="35" id="name">
+    	              
+    	    </textarea>
+    	    
+    </div>
+    <!--分享-->
+    
+    <table cellspacing="0" ng-show="istable">
+    	    <tr>
+    	    	<td ng-repeat="sharex1 in share1"><img style="width:50%;height:15%;border-radius: 50%;margin-left: 25%;" ng-src="{{sharex1.img}}"><p style="width: 4rem;text-align: center;font-size:10%;">{{sharex1.name}}</p></td>
+    	    </tr>
+    	    <tr>
+    	    	<td ng-repeat="sharex2 in share2"><img style="width:50%;height:15%;border-radius: 50%;margin-left: 25%;" ng-src="{{sharex2.img}}"><p style="width: 4rem;text-align: center;font-size:10%;">{{sharex2.name}}</p></td>    	    	
+    	    </tr>
+    </table>
+    <!--评论分享……部分-->
+    <xfooter ng-show="isfooter"></xfooter>
+    <!--图片放大部分-->
+    <div class="weui-gallery" style="display: {{isShowGallery?'block':'none'}}">
+      <span class="weui-gallery__img" style="{{imgUrl}}"></span>
+      <div class="weui-gallery__opr">
+        <a ng-click="showGallery(false)" class="weui-gallery__del">
+        	  退出
+        </a>
+      </div>
+    </div>
+    
+    <!--是用directive写的-->
+    <xloadmore ng-hide="isShow"></xloadmore>
+    <style type="text/css">
+            table{
+    	    	     position: fixed;
+    	    	     bottom: 0;
+    	    	     left: 0;
+    	    	     background: #D1D1D1;
+    	    	     width: 100%;
+    	     }
+       
+    	    .detail-title{
+    	    	      text-align: center;
+    	    	      padding: 4px 10px;
+    	    }
+    	    .detail-desc{
+    	    	      text-indent: 35px;
+    	    }
+    	    .detail-text{
+    	    	       position: fixed;
+    	    	       bottom:0;
+    	    	       width: 100%;
+    	    	       height: 35%;
+    	    	       background:#DFDFDF;
+    	    }
+    	    .detail-textarea{
+    	    	       position: absolute;
+    	    	       left: 50%;
+    	    	       top: 50%;
+    	    	       transform: translate(-50%,-50%);
+    	    }
+    	    .detail-text>label{
+    	    	       display: inline-block;
+    	    	       width: 32%;
+    	    	       text-align: center;
+    	    }
+    	    .detail-text>label:nth-child(2){
+    	    	       border-left: 1px solid #C0BFC4;
+    	    	       border-right: 1px solid #C0BFC4;
+    	    }
+    	    .detail-fb{
+    	    	       position:fixed;
+    	    	       width: 70%;
+    	    	       left: 50%;
+    	    	       top: 50%;
+    	    	       transform: translate(-50%,-50%);
+    	    	       z-index: 99;
+    	    	       border: 1px solid yellow;
+    	    	       background: #C9C9C9;
+    	    	       font-size: 14px;
+    	    }
+    	    table img{
+    	    	       width: 100%;
+    	    	       height: 10%;
+    	    }
+    	    
+    </style>

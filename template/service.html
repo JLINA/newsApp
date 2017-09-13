@@ -1,0 +1,20 @@
+<table cellspacing="0">
+	<tr >
+		<td ng-repeat="servicex1 in service1" ng-click="toggleservice()">
+			<img style="width:50%;height:15%;border-radius: 50%;margin-left: 25%;"  src="{{servicex1.img}}"/>
+			<p style="width: 4rem;text-align: center;font-size:10%;">{{servicex1.name}}</p>
+		</td>
+	</tr>
+	<tr>
+		<td ng-repeat="servicex2 in service2" ng-click="toggleservice()>
+			<img style="width:50%;height:15%;border-radius: 50%;margin-left: 25%;"  src="{{servicex2.img}}"/>
+			<p style="width: 4rem;text-align: center;font-size:10%;">{{servicex2.name}}</p>
+		</td>
+		 
+	</tr>
+</table>
+<style type="text/css">
+       td{
+       	     border: 1px solid #D1D1D1;
+       }
+</style>

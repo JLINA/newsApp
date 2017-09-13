@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		   <!--方法一-->
+		     <a ng-click="/page2">Go to page 2</a>
+		   <!--方法二-->
+		     <a ng-click="go('/page2', 'slideLeft')">Go to page 2</a>
+		   <!--方法三-->
+		   <!--$rootScope.go = function (path, pageAnimationClass) {
+			
+			    if (typeof(pageAnimationClass) === 'undefined') { // Use a default, your choice
+			        $rootScope.pageAnimationClass = 'crossFade';
+			    }
+			        
+			    else { // Use the specified animation
+			        $rootScope.pageAnimationClass = pageAnimationClass;
+			    }
+			
+			    if (path === 'back') { // Allow a 'back' keyword to go to previous page
+			        $window.history.back();
+			    }
+			        
+			    else { // Go to the specified path
+			        $location.path(path);
+			    }
+        };-->
+	</body>
+</html>

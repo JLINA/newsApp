@@ -1,0 +1,23 @@
+
+<div class="weui-tabbar weui-fixed">
+	        <a class="weui-tabbar__item weui-bar__item_on" ng-repeat="nav in navs" ng-click="toggleNav(nav.id,nav.url)">
+		          <div class="weui-tabbar__icon">
+		           		 <img ng-src="{{nav.src}}" alt="">
+		          </div>
+		          <p class="weui-tabbar__label">{{nav.name}}</p>
+	        </a>
+      </div>
+ </div>
+    <div ui-view=""></div>
+    <style>
+	.weui-fixed {
+		position: fixed;
+	}
+	
+	.weui-a {
+		display: block;
+		width: 100%;
+		/*height: 50px;*/
+	}
+</style>
+
